@@ -1,0 +1,16 @@
+<h1>山口大学体育会ヨット部　部員紹介</h1>
+<%= link_to "部員紹介の更新", members_new_path %>
+<div class="members-container">
+  <% @members.each do |t| %>
+    <div class="member">
+
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+
+      <%= t.body %>
+      <%= t.created_at %>
+      
+      <%= link_to "編集する", edit_member_path(t.id) %>
+      <%= button_to "削除する", member_path(t.id), method: :delete %>
+    </div>
+  <% end %>
+</div>

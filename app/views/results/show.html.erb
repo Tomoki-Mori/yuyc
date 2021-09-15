@@ -1,0 +1,9 @@
+<h1>山口大学体育会ヨット部　大会成績</h1>
+<h3>Result詳細</h3>
+<div class="result">
+  <p><%= @result.body %></p>
+  <p><%= @result.created_at %></p>
+</div>
+
+<%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+<%= link_to "Result一覧に戻る", results_path %>

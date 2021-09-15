@@ -1,0 +1,12 @@
+<%= form_for @result do |f| %>
+    <%= f.label :competition %>
+    <%= f.text_field :competition %>
+
+    <%= f.label :picture1 %>
+    <%= f.file_field :picture1, :size => 140 %>
+
+    <%= f.label :body %>
+    <%= f.text_field :body, :size => 140 %>
+
+    <%= f.submit "編集する" %>
+<% end %>

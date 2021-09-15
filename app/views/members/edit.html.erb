@@ -1,0 +1,27 @@
+<%= form_for @member do |f| %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 140 %>
+
+    <%= f.label :fuclty %>
+    <%= f.text_field :fuclty, :size => 140 %>
+
+    <%= f.label :position %>
+    <%= f.text_field :position, :size => 140 %>
+
+    <%= f.label :hobby %>
+    <%= f.text_field :hobby, :size => 140 %>
+
+    <%= f.label :role %>
+    <%= f.text_field :role, :size => 140 %>
+
+    <%= f.label :prefecture %>
+    <%= f.text_field :prefecture, :size => 140 %>
+
+    <%= f.label :profile %>
+    <%= f.text_field :profile, :size => 140 %>
+
+    <%= f.submit "編集する" %>
+<% end %>

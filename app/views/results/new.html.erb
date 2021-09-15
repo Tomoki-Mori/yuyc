@@ -1,0 +1,22 @@
+<h1>山口大学体育会ヨット部</h1>
+<h3>大会成績</h3>
+<%= form_for @result do |f| %>
+  <div class="field">
+    <%= f.label :competition %>
+    <%= f.text_field :competition %><br>
+
+    <%= f.label :picture1 %>
+    <%= f.file_field :picture1, :size => 140 %><br>
+
+    <%= f.label :body %>
+    <%= f.text_field :body, :size => 140 %><br>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  
+  <%= f.submit "Tweetする" %>
+<% end %>
+<%= link_to "Result一覧に戻る", results_path %>

@@ -1,0 +1,22 @@
+<h1>山口大学体育会ヨット部</h1>
+<h3>その他の報告</h3>
+<%= form_for @other do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+
+    <%= f.label :picture2 %>
+    <%= f.file_field :picture2, :size => 140 %><br>
+
+    <%= f.label :content %>
+    <%= f.text_field :content, :size => 140 %><br>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  
+  <%= f.submit "Tweetする" %>
+<% end %>
+<%= link_to "Other一覧に戻る", others_path %>
