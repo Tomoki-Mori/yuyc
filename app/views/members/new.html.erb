@@ -1,32 +1,33 @@
-<h1>山口大学体育会ヨット部</h1>
-<h3>部員紹介</h3>
-<%= form_for @member do |f| %>
+<h1>部員紹介の更新</h1>
+
+<%= form_for @member do |m| %>
   <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %><br>
+    <%= m.label :画像 %>
+    <%= m.file_field :image %><br>
 
-    <%= f.label :name %>
-    <%= f.text_field :name, :size => 140 %><br>
+    <%= m.label :名前 %>
+    <%= m.text_field :name, :size => 140 %><br>
 
-    <%= f.label :fuclty %>
-    <%= f.text_field :fuclty, :size => 140 %><br>
+    <%= m.label :学部 %>
+    <%= m.text_field :fuclty, :size => 140 %><br>
 
-    <%= f.label :position %>
-    <%= f.text_field :position, :size => 140 %><br>
+    <%= m.label :艇種 %>
+    <%= m.text_field :position, :size => 140 %><br>
 
-    <%= f.label :hobby %>
-    <%= f.text_field :hobby, :size => 140 %><br>
+    <%= m.label :趣味 %>
+    <%= m.text_field :hobby, :size => 140 %><br>
 
-    <%= f.label :role %>
-    <%= f.text_field :role, :size => 140 %><br>
+    <%= m.label :役割 %>
+    <%= m.text_field :role, :size => 140 %><br>
 
-    <%= f.label :prefecture %>
-    <%= f.text_field :prefecture, :size => 140 %><br>
+    <%= m.label :出身 %>
+    <%= m.text_field :prefecture, :size => 140 %><br>
 
-    <%= f.label :profile %>
-    <%= f.text_field :profile, :size => 140 %><br>
+    <%= m.label :プロフィール %>
+    <%= m.text_area :profile, :size => 140 %><br>
   </div>
 
-  <%= f.submit "Tweetする" %>
+  <%= m.submit "更新する"  , class: "btn btn-secondary" %>
 <% end %>
 <%= link_to "Member一覧に戻る", members_path %>
+

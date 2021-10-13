@@ -9,9 +9,10 @@ class OthersController < ApplicationController
 
     def create
         other = Other.new(other_params)
+        other.user_id = current_user.id
         if other.save
             redirect_to :action => "index"
-    　　else
+        else
             redirect_to :action => "new"
         end
     end
@@ -41,7 +42,7 @@ class OthersController < ApplicationController
 
     private
     def other_params
-      params.require(:other).permit(:body, :image)
+      params.require(:other).permit(:title, :content, :picture2)
     end
 
 end

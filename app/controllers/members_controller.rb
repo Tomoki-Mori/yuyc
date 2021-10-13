@@ -8,12 +8,13 @@ class MembersController < ApplicationController
     end
 
     def create
-    　member = Member.new(member_params)
-    　if member.save
+      member = Member.new(member_params)
+      member.user_id = current_user.id
+      if member.save
         redirect_to :action => "index"
-　　　else
+      else
         redirect_to :action => "new"
-    　end
+      end
     end
 
     def edit
@@ -23,7 +24,7 @@ class MembersController < ApplicationController
     def update
       member = Member.find(params[:id])
       if member.update(member_params)
-        redirect_to :action => "show", :id => member.id
+        redirect_to :action => "index", :id => member.id
       else
         redirect_to :action => "new"
       end
@@ -37,7 +38,7 @@ class MembersController < ApplicationController
     
     private
     def member_params
-      params.require(:member).permit(:body, :image)
+      params.require(:member).permit(:image, :name, :fuclty, :position, :hobby, :role, :prefecture, :profile)
     end
 
 end

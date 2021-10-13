@@ -1,22 +1,49 @@
-<h1>山口大学体育会ヨット部</h1>
-<h3>大会成績</h3>
-<%= form_for @result do |f| %>
+<h1>大会成績</h1>
+
+<%= form_for @result do |r| %>
   <div class="field">
-    <%= f.label :competition %>
-    <%= f.text_field :competition %><br>
+    <%= r.label :大会 %>
+    <%= r.text_field :competition %><br>
 
-    <%= f.label :picture1 %>
-    <%= f.file_field :picture1, :size => 140 %><br>
+    <%= r.label :画像 %>
+    <%= r.file_field :picture1, :size => 140 %><br>
 
-    <%= f.label :body %>
-    <%= f.text_field :body, :size => 140 %><br>
-  </div>
+    <%= r.label :日程 %>
+    <%= r.datetime_field :event_date %><br>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= r.label :場所 %>
+    <%= r.text_field :adress %><br>
+
+    <%= r.label :４７０ %>
+    <%= r.text_area :posia %><br>
+
+    <%= r.label :４７０ %>
+    <%= r.text_area :posib %><br>
+
+    <%= r.label :４７０ %>
+    <%= r.text_area :posic %><br>
+
+    <%= r.label :４７０ %>
+    <%= r.text_area :posid %><br>
+
+    <%= r.label :スナイプ %>
+    <%= r.text_area :snipea %><br>
+
+    <%= r.label :スナイプ %>
+    <%= r.text_area :snipeb %><br>
+
+    <%= r.label :スナイプ %>
+    <%= r.text_area :snipec %><br>
+
+    <%= r.label :スナイプ %>
+    <%= r.text_area :sniped %><br>
+
+    <%= r.label :その他 %>
+    <%= r.text_area :body %><br>
+
   </div>
   
-  <%= f.submit "Tweetする" %>
+  <%= r.submit "投稿する" , class: "btn btn-secondary" %>
+
 <% end %>
 <%= link_to "Result一覧に戻る", results_path %>

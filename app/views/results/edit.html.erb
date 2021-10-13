@@ -1,12 +1,12 @@
-<%= form_for @result do |f| %>
-    <%= f.label :competition %>
-    <%= f.text_field :competition %>
+<%= form_for @result do |r| %>
+    <%= r.label :competition %>
+    <%= r.text_field :competition %>
 
-    <%= f.label :picture1 %>
-    <%= f.file_field :picture1, :size => 140 %>
+    <%= r.label :picture1 %>
+    <%= r.file_field :picture1, :size => 140 %>
 
-    <%= f.label :body %>
-    <%= f.text_field :body, :size => 140 %>
+    <%= r.label :body %>
+    <%= r.text_field :body, :size => 140 %>
 
-    <%= f.submit "編集する" %>
+    <%= r.submit "編集する" %>
 <% end %>

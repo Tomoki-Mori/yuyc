@@ -1,9 +1,12 @@
 <h1>山口大学体育会ヨット部　その他の報告</h1>
 <h3>Other詳細</h3>
 <div class="other">
-  <p><%= @other.body %></p>
-  <p><%= @other.created_at %></p>
+  
+  <%= safe_join(@other.content.split("\n"),tag(:br)) %></p>
 </div>
 
+<div>
+  <%= @other.content %>
+</div>
 
 <%= link_to "Other一覧に戻る", others_path %>

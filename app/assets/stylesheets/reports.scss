@@ -1,0 +1,48 @@
+// Place all the styles related to the reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container report {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;  
+    margin-bottom: 50px;
+}
+  
+.row gy-5 {
+    width: 160px;
+    height: 160px;
+    margin-right: 10px;
+}
+  
+.row gy-5:last-child {
+    margin-right: 0px; 
+}
+
+.picture7 {
+    height: 275px;
+    width: 500px;
+    background-image: url("picture7.JPG"); 
+    background-size: cover;
+}
+
+.picture8 {
+    height: 275px;
+    width: 500px;
+    background-image: url("picture8.JPG"); 
+    background-size: cover;
+}
+
+.picture9 {
+    height: 275px;
+    width: 500px;
+    background-image: url("picture9.JPG"); 
+    background-size: cover;
+}
+
+.picture10 {
+    height: 275px;
+    width: 500px;
+    background-image: url("picture10.JPG"); 
+    background-size: cover;
+}

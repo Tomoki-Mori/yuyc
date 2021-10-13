@@ -1,5 +1,5 @@
 class HelloController < ApplicationController
-    def index
+    def yacht
     end
 
     def link

@@ -1,16 +1,44 @@
-<h1>山口大学体育会ヨット部　部員紹介</h1>
-<%= link_to "部員紹介の更新", members_new_path %>
-<div class="members-container">
-  <% @members.each do |t| %>
-    <div class="member">
+<h1>部員紹介</h1>
 
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+<div class="member-texts-wrapper">
 
-      <%= t.body %>
-      <%= t.created_at %>
+  <div class="contents-title text-center">
+    <div class="row">
+  <% @members.each do |m| %>
       
-      <%= link_to "編集する", edit_member_path(t.id) %>
-      <%= button_to "削除する", member_path(t.id), method: :delete %>
-    </div>
+  
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card">
+            <%= image_tag m.image_url, size: "250x300" if m.image? %>
+            <div class="card-body">
+                <p class="card-title"><%= m.name %></p>
+                <p class="card-text"><%= m.profile %>
+                <div>
+                <%= m.profile %>
+                <%= safe_join(m.profile.split("\n"),tag(:br)) %>
+                </div>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= m.fuclty %></li>
+                <li class="list-group-item"><%= m.position %></li>
+                <li class="list-group-item"><%= m.hobby %></li>
+                <li class="list-group-item"><%= m.role %></li>
+                <li class="list-group-item"><%= m.prefecture %></li>
+
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+    <% if user_signed_in? && current_user.id == m.user_id %> 
+      <%= link_to "編集する", edit_member_path(m.id) %>
+      <%= button_to "削除する", member_path(m.id), method: :delete %>
+    <% end %> 
   <% end %>
+    </div> 
+  </div>
+  
+        
+  
+ 
 </div>

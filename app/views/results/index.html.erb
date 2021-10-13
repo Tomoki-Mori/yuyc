@@ -1,18 +1,22 @@
-<h1>山口大学体育会ヨット部　大会成績</h1>
-<%= link_to "大会成績の更新", results_new_path %>
+<h1>大会成績</h1>
+
 <div class="results-container">
-  <% @results.each do |t| %>
-    <div class="result">
+  <% @results.each do |r| %>
+  <div class="result">
 
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
-
-      <%= t.body %>
-      <%= t.created_at %>
-
-      <%= link_to "詳細へ", result_path(t.id) %>
-      <%= link_to "編集する", edit_result_path(t.id) %>
-      <%= button_to "削除する", result_path(t.id), method: :delete %>
-      
+    <%= image_tag r.picture1_url, size: "250x200" if r.picture1? %>
+    <br>
+    <%= r.competition %>
+    <br>
+    <div class="results-index-body">
+    <%= r.body %>
     </div>
+    <br>
+    
+    <% if user_signed_in? && current_user.id == r.user_id %>
+      <%= link_to "編集する", edit_result_path(r.id) %>
+      <%= button_to "削除する", result_path(r.id), method: :delete %>
+    <% end %>
+  </div>
   <% end %>
 </div>

@@ -1,12 +1,12 @@
-<%= form_for @other do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<%= form_for @other do |o| %>
+    <%= o.label :title %>
+    <%= o.text_field :title %>
 
-    <%= f.label :picture2 %>
-    <%= f.file_field :picture2, :size => 140 %>
+    <%= o.label :picture2 %>
+    <%= o.file_field :picture2, :size => 140 %>
 
-    <%= f.label :content %>
-    <%= f.text_field :content, :size => 140 %>
+    <%= o.label :content %>
+    <%= o.text_field :content, :size => 140 %>
 
-    <%= f.submit "編集する" %>
+    <%= o.submit "編集する" %>
 <% end %>

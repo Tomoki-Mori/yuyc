@@ -1,27 +1,27 @@
-<%= form_for @member do |f| %>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+<%= form_for @member do |m| %>
+    <%= m.label :image %>
+    <%= m.file_field :image %><br>
 
-    <%= f.label :name %>
-    <%= f.text_field :name, :size => 140 %>
+    <%= m.label :name %>
+    <%= m.text_field :name, :size => 140 %><br>
 
-    <%= f.label :fuclty %>
-    <%= f.text_field :fuclty, :size => 140 %>
+    <%= m.label :fuclty %>
+    <%= m.text_field :fuclty, :size => 140 %><br>
 
-    <%= f.label :position %>
-    <%= f.text_field :position, :size => 140 %>
+    <%= m.label :position %>
+    <%= m.text_field :position, :size => 140 %><br>
 
-    <%= f.label :hobby %>
-    <%= f.text_field :hobby, :size => 140 %>
+    <%= m.label :hobby %>
+    <%= m.text_field :hobby, :size => 140 %><br>
 
-    <%= f.label :role %>
-    <%= f.text_field :role, :size => 140 %>
+    <%= m.label :role %>
+    <%= m.text_field :role, :size => 140 %><br>
 
-    <%= f.label :prefecture %>
-    <%= f.text_field :prefecture, :size => 140 %>
+    <%= m.label :prefecture %>
+    <%= m.text_field :prefecture, :size => 140 %><br>
 
-    <%= f.label :profile %>
-    <%= f.text_field :profile, :size => 140 %>
+    <%= m.label :profile %>
+    <%= m.text_area :profile, :size => 140 %><br>
 
-    <%= f.submit "編集する" %>
+    <%= m.submit "編集する" %>
 <% end %>

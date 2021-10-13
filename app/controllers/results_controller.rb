@@ -9,9 +9,10 @@ class ResultsController < ApplicationController
 
     def create
         result = Result.new(result_params)
+        result.user_id = current_user.id
         if result.save
             redirect_to :action => "index"
-    　　else
+        else
             redirect_to :action => "new"
         end
     end
@@ -41,7 +42,7 @@ class ResultsController < ApplicationController
 
     private
     def result_params
-      params.require(:result).permit(:body, :image)
+      params.require(:result).permit(:competition, :body, :picture1, :event_date, :adress , :posia , :posib , :posic , :posid , :snipea , :snipeb ,  :snipec, :sniped)
     end
 
 end

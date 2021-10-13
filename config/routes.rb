@@ -1,16 +1,23 @@
 Rails.application.routes.draw do
-  root to: 'events#index'
+  
+  devise_for :users
+  resources :videos
   resources :events
+  resources :others
+  resources :members
   
-  get 'hello/index' => 'hello#index'
+  get 'hello/yacht' => 'hello#yacht'
   get 'hello/link' => 'hello#link'
-  
+
+  get 'events/index' => 'events#index'
+
+  get 'logins' => 'logins#index'
+
   get 'members' => 'members#index'
-  get 'members/new' => 'members#new'
-  post 'members' => 'members#create'
-  patch 'members/:id' => 'members#update'
-  delete 'members/:id' => 'members#destroy'
-  get 'members/:id/edit' => 'members#edit', as:'edit_member'
+
+  get 'welcomes/index' => 'welcomes#index'
+
+  get 'reports/index' => 'reports#index'
 
   get 'results' => 'results#index'
   get 'results/new' => 'results#new'
@@ -20,14 +27,6 @@ Rails.application.routes.draw do
   delete 'results/:id' => 'results#destroy'
   get 'results/:id/edit' => 'results#edit', as:'edit_result'
 
-  get 'others' => 'others#index'
-  get 'others/new' => 'others#new'
-  post 'others' => 'others#create'
-  get 'others/:id' => 'others#show',as: 'other'
-  patch 'others/:id' => 'others#update'
-  delete 'others/:id' => 'others#destroy'
-  get 'others/:id/edit' => 'others#edit', as:'edit_other'
-
-  root 'hello#index'
+  root 'events#index'
 
 end

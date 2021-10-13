@@ -1,18 +1,21 @@
-<h1>山口大学体育会ヨット部　その他の報告</h1>
-<%= link_to "その他の報告の更新", others_new_path %>
+<h1>その他の報告</h1>
+
 <div class="others-container">
-  <% @others.each do |t| %>
-    <div class="other">
+  <% @others.each do |o| %>
+  <div class="other">
 
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
 
-      <%= t.body %>
-      <%= t.created_at %>
+    <%= image_tag o.picture2_url, size: "250x200" if o.picture2? %>
+    <br>
+    <%= o.title %>
+    <br>
+    <%= o.content %>
+    <br>
       
-      <%= link_to "詳細へ", other_path(t.id) %>
-      <%= link_to "編集する", edit_other_path(t.id) %>
-      <%= button_to "削除する", other_path(t.id), method: :delete %>
-
-    </div>
+    <% if user_signed_in? && current_user.id == o.user_id %>
+      <%= link_to "編集する", edit_other_path(o.id) %>
+      <%= button_to "削除する", other_path(o.id), method: :delete %>
+    <% end %>
+  </div>
   <% end %>
 </div>
